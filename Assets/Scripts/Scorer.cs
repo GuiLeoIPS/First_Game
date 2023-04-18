@@ -8,7 +8,9 @@ public class Scorer : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        hits++;
-        Debug.Log("You bumped a wall " + hits + " times");
+        if(other.gameObject.tag != "Hit" && other.gameObject.tag != "Finish" && other.gameObject.tag != "Respawn"){
+            hits++;
+            Debug.Log("You bumped a wall " + hits + " times");
+        }
     }
 }
